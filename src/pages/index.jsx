@@ -170,7 +170,7 @@ const Index = () => (
           <BigTitle>
             Hello, <br /> I'm John Doe.
           </BigTitle>
-          <Subtitle>I'm creating noice web experiences for the next generation of consumer-facing companies.</Subtitle>
+          <Subtitle>I'm creating noice web experiences !!!.</Subtitle>
         </Hero>
       </Content>
       <DividerMiddle
