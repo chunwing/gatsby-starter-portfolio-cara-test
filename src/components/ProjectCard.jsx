@@ -2,6 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 const Wrapper = styled.a`
   width: 100%;
@@ -23,18 +25,56 @@ const Title = styled.div`
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 `;
 
-const ProjectCard = ({ title, link, children, bg }) => (
-  <Wrapper href={link} target="_blank" rel="noopener noreferrer" bg={bg}>
-    <Text>{children}</Text>
-    <Title>{title}</Title>
-  </Wrapper>
-);
+
+class ProjectCard extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      photoIndex: 0,
+      isOpen: false
+    };
+  }
+  render() {
+    const { photoIndex, isOpen } = this.state;
+    const images = this.props.src;
+    return (
+      <Wrapper
+      onClick={() =>
+        this.setState({
+          isOpen: true,
+        })
+      }
+      bg={this.props.bg}
+    >
+<Text> {this.props.children} </Text> <Title> {this.props.title} </Title>{' '}
+        {isOpen && (
+          <Lightbox
+            mainSrc={images[photoIndex]}
+            nextSrc={images[(photoIndex + 1) % images.length]}
+            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+            onCloseRequest={() => this.setState({ isOpen: false })}
+            onMovePrevRequest={() =>
+              this.setState({
+                photoIndex: (photoIndex + images.length - 1) % images.length
+              })}
+            onMoveNextRequest={() =>
+              this.setState({
+                photoIndex: (photoIndex + 1) % images.length
+              })}
+          />
+        )}
+      </Wrapper>
+    );
+  }
+}
+
 
 export default ProjectCard;
 
 ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  src: PropTypes.arrayOf(PropTypes.string).isRequired,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   bg: PropTypes.string.isRequired,
 };
