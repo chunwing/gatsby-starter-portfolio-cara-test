@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
+// import 'react-image-lightbox/style.css';
 
 const Wrapper = styled.a`
   width: 100%;
