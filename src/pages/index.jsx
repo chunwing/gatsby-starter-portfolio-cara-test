@@ -168,7 +168,9 @@ const Index = () => (
       <Content speed={0.4} offset={0}>
         <Hero>
           <BigTitle>
-            Hello, <br /> I'm John Doe.
+
+            Hello, <br /> I'm EN123.
+
           </BigTitle>
           <Subtitle>I'm creating noice web experiences !!!.</Subtitle>
         </Hero>
