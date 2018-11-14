@@ -14,6 +14,30 @@ import triangle from '../images/triangle.svg';
 import avatar from '../images/avatar.jpg';
 import '../styles/global';
 
+const images = [
+  '//placekitten.com/4000/3000',
+  '//placekitten.com/800/1200',
+  '//placekitten.com/1500/1500',
+];
+const images2 = [
+  '//placekitten.com/1500/500',
+  '//placekitten.com/4000/3000',
+  '//placekitten.com/800/1200',
+  '//placekitten.com/1500/1500',
+];
+const images3 = [
+  '//placekitten.com/1500/500',
+  '//placekitten.com/4000/3000',
+  '//placekitten.com/800/1200',
+  '//placekitten.com/1500/1500',
+];
+const images4 = [
+  '//placekitten.com/1500/500',
+  '//placekitten.com/4000/3000',
+  '//placekitten.com/800/1200',
+  '//placekitten.com/1500/1500',
+];
+
 let Parallax;
 let ParallaxLayer;
 
@@ -187,28 +211,28 @@ const Index = () => (
           <ProjectsWrapper>
             <ProjectCard
               title="Freiheit"
-              link="https://www.behance.net/gallery/58937147/Freiheit"
+              src= {images}
               bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
             >
               This project is my entry to Adobe's #ChallengeYourPerspective contest.
             </ProjectCard>
             <ProjectCard
               title="Harry Potter"
-              link="https://www.behance.net/gallery/52915793/Harry-Potter"
+              src= {images2}
               bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
             >
               I entered the DOCMA 2017 award with this Harry Potter inspired image.
             </ProjectCard>
             <ProjectCard
               title="Tomb Raider"
-              link="https://www.behance.net/gallery/43907099/Tomb-Raider"
+              src= {images3}
               bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
             >
               Recreation of a Tomb Raider Wallpaper (Fan Art)
             </ProjectCard>
             <ProjectCard
               title="Eagle"
-              link="https://www.behance.net/gallery/38068151/Eagle"
+              src= {images4}
               bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
             >
               A fantasy image manipulation relocating the habitat of wild animals.
